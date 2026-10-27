@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-28T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="brewLiteClassFixed" name="Task 2.3 - Class Diagram">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="&lt;b&gt;BREWLITE — DOMAIN CLASS DIAGRAM (TASK 2.3)&lt;/b&gt;&lt;br/&gt;&lt;font style='font-size:12px'&gt;Core ordering, payment, promotion, and loyalty domain&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="15" width="800" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="User" value="&lt;b&gt;&lt;font style='font-size:15px'&gt;User&lt;/font&gt;&lt;/b&gt;&lt;hr/&gt;- id: UUID&lt;br/&gt;- email: string&lt;br/&gt;- passwordHash: string&lt;br/&gt;- loyaltyPoints: int&lt;br/&gt;- createdAt: datetime&lt;hr/&gt;+ register()&lt;br/&gt;+ authenticate()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=13;strokeColor=#6c8ebf;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="250" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="Product" value="&lt;b&gt;&lt;font style='font-size:15px'&gt;Product&lt;/font&gt;&lt;/b&gt;&lt;hr/&gt;- id: UUID&lt;br/&gt;- name: string&lt;br/&gt;- description: string&lt;br/&gt;- price: decimal&lt;br/&gt;- imageUrl: string&lt;br/&gt;- stock: int&lt;br/&gt;- isAvailable: boolean&lt;hr/&gt;+ checkStock(qty): boolean" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=13;strokeColor=#6c8ebf;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="380" y="100" width="260" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="Order" value="&lt;b&gt;&lt;font style='font-size:15px'&gt;Order&lt;/font&gt;&lt;/b&gt;&lt;hr/&gt;- id: UUID&lt;br/&gt;- userId: UUID&lt;br/&gt;- status: OrderStatus&lt;br/&gt;- subtotal: decimal&lt;br/&gt;- discountAmount: decimal&lt;br/&gt;- total: decimal&lt;br/&gt;- createdAt: datetime&lt;br/&gt;- updatedAt: datetime&lt;hr/&gt;+ calculateTotal()&lt;br/&gt;+ cancel()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=13;strokeColor=#6c8ebf;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="720" y="100" width="280" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="OrderItem" value="&lt;b&gt;&lt;font style='font-size:15px'&gt;OrderItem&lt;/font&gt;&lt;/b&gt;&lt;hr/&gt;- id: UUID&lt;br/&gt;- orderId: UUID&lt;br/&gt;- productId: UUID&lt;br/&gt;- size: string&lt;br/&gt;- toppings: string&lt;br/&gt;- quantity: int&lt;br/&gt;- unitPrice: decimal&lt;br/&gt;- lineTotal: decimal&lt;hr/&gt;+ calculateLineTotal()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=13;strokeColor=#6c8ebf;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="100" width="270" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="LoyaltyTransaction" value="&lt;b&gt;&lt;font style='font-size:15px'&gt;LoyaltyTransaction&lt;/font&gt;&lt;/b&gt;&lt;hr/&gt;- id: UUID&lt;br/&gt;- userId: UUID&lt;br/&gt;- orderId: UUID&lt;br/&gt;- pointsChange: int&lt;br/&gt;- transactionType: string&lt;br/&gt;- description: string&lt;br/&gt;- createdAt: datetime&lt;hr/&gt;+ applyPoints()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=13;strokeColor=#6c8ebf;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="60" y="430" width="280" height="205" as="geometry"/>
+        </mxCell>
+        <mxCell id="Promotion" value="&lt;b&gt;&lt;font style='font-size:15px'&gt;Promotion&lt;/font&gt;&lt;/b&gt;&lt;hr/&gt;- id: UUID&lt;br/&gt;- code: string&lt;br/&gt;- description: string&lt;br/&gt;- discountType: DiscountType&lt;br/&gt;- discountValue: decimal&lt;br/&gt;- startAt: datetime&lt;br/&gt;- endAt: datetime&lt;br/&gt;- isActive: boolean&lt;hr/&gt;+ isValid()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=13;strokeColor=#6c8ebf;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="390" y="430" width="260" height="195" as="geometry"/>
+        </mxCell>
+        <mxCell id="Payment" value="&lt;b&gt;&lt;font style='font-size:15px'&gt;Payment&lt;/font&gt;&lt;/b&gt;&lt;hr/&gt;- id: UUID&lt;br/&gt;- orderId: UUID&lt;br/&gt;- idempotencyKey: string&lt;br/&gt;- amount: decimal&lt;br/&gt;- method: PaymentMethod&lt;br/&gt;- status: PaymentStatus&lt;br/&gt;- transactionRef: string&lt;br/&gt;- paidAt: datetime&lt;hr/&gt;+ process()&lt;br/&gt;+ refund()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=13;strokeColor=#6c8ebf;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="730" y="430" width="280" height="205" as="geometry"/>
+        </mxCell>
+        <mxCell id="OrderStatus" value="&lt;b&gt;«enumeration» OrderStatus&lt;/b&gt;&lt;hr/&gt;PENDING&lt;br/&gt;PAID&lt;br/&gt;PREPARING&lt;br/&gt;READY&lt;br/&gt;COMPLETED&lt;br/&gt;CANCELLED&lt;br/&gt;PAYMENT_FAILED" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;strokeColor=#9673a6;fillColor=#f3e8f7;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="410" width="270" height="165" as="geometry"/>
+        </mxCell>
+        <mxCell id="PaymentStatus" value="&lt;b&gt;«enumeration» PaymentStatus&lt;/b&gt;&lt;hr/&gt;PENDING&lt;br/&gt;SUCCESS&lt;br/&gt;FAILED&lt;br/&gt;REFUNDED" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;strokeColor=#9673a6;fillColor=#f3e8f7;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="620" width="270" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="PaymentMethod" value="&lt;b&gt;«enumeration» PaymentMethod&lt;/b&gt;&lt;hr/&gt;MOCK_MOMO&lt;br/&gt;MOCK_VNPAY&lt;br/&gt;MOCK_CARD" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;strokeColor=#9673a6;fillColor=#f3e8f7;" vertex="1" parent="1">
+          <mxGeometry x="720" y="740" width="250" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="DiscountType" value="&lt;b&gt;«enumeration» DiscountType&lt;/b&gt;&lt;hr/&gt;PERCENTAGE&lt;br/&gt;FIXED_AMOUNT" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;strokeColor=#9673a6;fillColor=#f3e8f7;" vertex="1" parent="1">
+          <mxGeometry x="390" y="740" width="260" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="u_order" value="places" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=none;startArrow=none;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="User" target="Order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="order_items" value="contains 1 : 1..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#333333;startArrow=diamond;startFill=1;endArrow=none;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Order" target="OrderItem">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="product_item" value="product 1 : 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#333333;endArrow=none;startArrow=none;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Product" target="OrderItem">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="order_payment" value="payment 1 : 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#333333;startArrow=diamond;startFill=1;endArrow=none;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Order" target="Payment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="u_loyalty" value="owns 1 : 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#333333;startArrow=diamond;startFill=1;endArrow=none;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="User" target="LoyaltyTransaction">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="order_loyalty" value="related order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#333333;endArrow=none;startArrow=none;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Order" target="LoyaltyTransaction">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="promo_order" value="applied to 0..1 : 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#333333;endArrow=none;startArrow=none;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Promotion" target="Order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="order_status" value="status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;strokeColor=#9673a6;dashed=1;endArrow=open;startArrow=none;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Order" target="OrderStatus">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="payment_status" value="status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;strokeColor=#9673a6;dashed=1;endArrow=open;startArrow=none;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Payment" target="PaymentStatus">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="payment_method" value="method" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;strokeColor=#9673a6;dashed=1;endArrow=open;startArrow=none;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Payment" target="PaymentMethod">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="promo_type" value="discountType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;strokeColor=#9673a6;dashed=1;endArrow=open;startArrow=none;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="Promotion" target="DiscountType">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Notation&lt;/b&gt;&lt;hr/&gt;Solid line: association&lt;br/&gt;Filled diamond: composition&lt;br/&gt;Dashed arrow: enum/type dependency&lt;br/&gt;&lt;br/&gt;IDs use UUID; monetary values use decimal." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;strokeColor=#d6b656;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="100" width="230" height="170" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

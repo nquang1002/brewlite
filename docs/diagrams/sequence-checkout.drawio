@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-27T17:20:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="sequence-checkout" name="Sequence Diagram - Checkout">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="life0" value="Customer" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;size=60;strokeColor=#333333;fillColor=#FFFFFF;fontSize=14;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="70" y="30" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ll0" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#777777;strokeWidth=1;" edge="1" parent="1" source="life0" target="life0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="100"/>
+              <mxPoint x="160" y="1120"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="life1" value="Next.js UI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;size=60;strokeColor=#333333;fillColor=#FFFFFF;fontSize=14;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="330" y="30" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ll1" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#777777;strokeWidth=1;" edge="1" parent="1" source="life1" target="life1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="100"/>
+              <mxPoint x="420" y="1120"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="life2" value="NestJS API" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;size=60;strokeColor=#333333;fillColor=#FFFFFF;fontSize=14;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="650" y="30" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ll2" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#777777;strokeWidth=1;" edge="1" parent="1" source="life2" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="100"/>
+              <mxPoint x="740" y="1120"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="life3" value="PostgreSQL" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;size=60;strokeColor=#333333;fillColor=#FFFFFF;fontSize=14;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="960" y="30" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ll3" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#777777;strokeWidth=1;" edge="1" parent="1" source="life3" target="life3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="100"/>
+              <mxPoint x="1050" y="1120"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="life4" value="Payment Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;size=60;strokeColor=#333333;fillColor=#FFFFFF;fontSize=14;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="30" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ll4" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#777777;strokeWidth=1;" edge="1" parent="1" source="life4" target="life4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="100"/>
+              <mxPoint x="1360" y="1120"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m0" value="1. Chọn sản phẩm, size/topping và nhấn Thanh toán" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life0" target="life1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="125"/>
+              <mxPoint x="420" y="125"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" value="2. POST /orders {items, address?} + JWT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life1" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="175"/>
+              <mxPoint x="740" y="175"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="3. Verify JWT + validate DTO / dữ liệu đầu vào" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="225"/>
+              <mxPoint x="805" y="225"/>
+              <mxPoint x="805" y="245"/>
+              <mxPoint x="740" y="245"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="4. BEGIN TRANSACTION; kiểm tra tồn kho" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="275"/>
+              <mxPoint x="1050" y="275"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="5. Tồn kho / dữ liệu sản phẩm hợp lệ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life3" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="325"/>
+              <mxPoint x="740" y="325"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="6. Tạo Order(PENDING) + OrderItems; giữ/cập nhật stock" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="375"/>
+              <mxPoint x="1050" y="375"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="7. COMMIT TRANSACTION" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="425"/>
+              <mxPoint x="1050" y="425"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="8. Trả orderId, total, status=PENDING" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life3" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="475"/>
+              <mxPoint x="740" y="475"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="9. Trả thông tin đơn hàng cho UI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="525"/>
+              <mxPoint x="420" y="525"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="10. POST /payments + Idempotency-Key" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life1" target="life4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="575"/>
+              <mxPoint x="1360" y="575"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="11. Kết quả mock payment (success/failure)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life4" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="625"/>
+              <mxPoint x="740" y="625"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="alt_auth" value="ALT [JWT không hợp lệ / chưa đăng nhập]&lt;br&gt;API trả 401 Unauthorized; UI yêu cầu đăng nhập.&lt;br&gt;&lt;br&gt;ALT [Hết hàng / số lượng không hợp lệ]&lt;br&gt;Rollback transaction; API trả 409 Conflict hoặc 400; UI giữ giỏ hàng và hiển thị lỗi." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;align=left;verticalAlign=top;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="55" y="700" width="480" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="alt_frame" value="alt — Kết quả thanh toán" style="shape=rect;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=top;align=left;fontSize=13;spacingTop=4;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="560" y="680" width="900" height="350" as="geometry"/>
+        </mxCell>
+        <mxCell id="success_box" value="[Thanh toán thành công]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=13;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="580" y="715" width="410" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="failure_box" value="[Thanh toán thất bại]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=13;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="715" width="420" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="s0" value="12a. Xác nhận giao dịch thành công" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="780"/>
+              <mxPoint x="1360" y="780"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1" value="13a. paymentStatus = SUCCESS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life4" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="825"/>
+              <mxPoint x="740" y="825"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2" value="14a. UPDATE Payment=PAID; Order=PAID (transaction)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="870"/>
+              <mxPoint x="1050" y="870"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s3" value="15a. COMMIT; trả trạng thái PAID" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life3" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="915"/>
+              <mxPoint x="740" y="915"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s4" value="16a. Trả xác nhận đơn hàng thành công" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="960"/>
+              <mxPoint x="420" y="960"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f0" value="12b. Nhận kết quả thất bại" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="780"/>
+              <mxPoint x="1360" y="780"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1" value="13b. paymentStatus = FAILED" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life4" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="825"/>
+              <mxPoint x="740" y="825"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f2" value="14b. Ghi Payment=FAILED; Order giữ PENDING hoặc PAYMENT_FAILED" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#222222;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="870"/>
+              <mxPoint x="1050" y="870"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f3" value="15b. Trả trạng thái thất bại" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life3" target="life2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="915"/>
+              <mxPoint x="740" y="915"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f4" value="16b. Báo lỗi; cho phép thử thanh toán lại" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#555555;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="life2" target="life1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="960"/>
+              <mxPoint x="420" y="960"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="idem_note" value="Idempotency: cùng Idempotency-Key thì trả lại kết quả giao dịch đã lưu, không tạo thanh toán/trừ tiền lần hai. API chỉ cập nhật trạng thái đơn sau khi nhận kết quả từ Payment Service." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;align=left;verticalAlign=top;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1045" width="820" height="65" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_note" value="Kết thúc: UI hiển thị mã đơn và trạng thái cuối cùng; mọi lỗi xác thực, tồn kho hoặc thanh toán đều trả thông báo rõ ràng." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;align=left;verticalAlign=top;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1120" width="820" height="55" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

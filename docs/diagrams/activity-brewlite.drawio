@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-27T17:30:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="activity-end-to-end" name="Activity Diagram - BrewLite">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="lane_customer" value="Customer" style="swimlane;html=1;startSize=34;horizontal=0;rounded=0;collapsible=0;whiteSpace=wrap;fillColor=#F5F5F5;swimlaneFillColor=#FFFFFF;strokeColor=#666666;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="300" height="1500" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_ui" value="Next.js UI / PWA" style="swimlane;html=1;startSize=34;horizontal=0;rounded=0;collapsible=0;whiteSpace=wrap;fillColor=#F5F5F5;swimlaneFillColor=#FFFFFF;strokeColor=#666666;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="330" y="40" width="300" height="1500" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_api" value="NestJS API" style="swimlane;html=1;startSize=34;horizontal=0;rounded=0;collapsible=0;whiteSpace=wrap;fillColor=#F5F5F5;swimlaneFillColor=#FFFFFF;strokeColor=#666666;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="630" y="40" width="350" height="1500" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_db" value="PostgreSQL" style="swimlane;html=1;startSize=34;horizontal=0;rounded=0;collapsible=0;whiteSpace=wrap;fillColor=#F5F5F5;swimlaneFillColor=#FFFFFF;strokeColor=#666666;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="980" y="40" width="300" height="1500" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_payment" value="Mock Payment Service" style="swimlane;html=1;startSize=34;horizontal=0;rounded=0;collapsible=0;whiteSpace=wrap;fillColor=#F5F5F5;swimlaneFillColor=#FFFFFF;strokeColor=#666666;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="40" width="300" height="1500" as="geometry"/>
+        </mxCell>
+        <mxCell id="start" value="" style="ellipse;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="145" y="90" width="28" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="menu" value="Xem menu đồ uống" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="75" y="145" width="170" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="choose" value="Chọn sản phẩm, size/topping&lt;br&gt;và số lượng" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="65" y="220" width="190" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="addcart" value="Thêm sản phẩm vào giỏ hàng" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="65" y="305" width="190" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="checkout" value="Xem giỏ hàng và nhấn&lt;br&gt;Đặt hàng / Thanh toán" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="65" y="385" width="190" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="login_decision" value="Đã đăng nhập?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="370" y="465" width="130" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="login" value="Đăng nhập / đăng ký" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="385" y="575" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="auth_api" value="Gửi thông tin đăng nhập;&lt;br&gt;API xác thực và cấp JWT" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="575" width="230" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="auth_ok" value="JWT hợp lệ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="730" y="660" width="130" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="auth_error" value="Thông báo lỗi xác thực;&lt;br&gt;yêu cầu đăng nhập lại" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="380" y="770" width="170" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="review_cart" value="Quay lại giỏ hàng,&lt;br&gt;kiểm tra đơn và tổng tiền" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="65" y="680" width="190" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="submit_order" value="Gửi yêu cầu tạo đơn&lt;br&gt;(JWT + danh sách sản phẩm)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="375" y="865" width="180" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="validate" value="NestJS kiểm tra JWT,&lt;br&gt;validate dữ liệu và giá" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="865" width="230" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="stock_decision" value="Còn đủ hàng?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="735" y="950" width="130" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="stock_error" value="Trả lỗi hết hàng / số lượng&lt;br&gt;không hợp lệ" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1050" width="230" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="stock_msg" value="Hiển thị lỗi; giữ giỏ hàng&lt;br&gt;để người dùng chỉnh sửa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="375" y="1050" width="180" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="create_order" value="Mở transaction; tạo Order&lt;br&gt;PENDING + OrderItems;&lt;br&gt;cập nhật tồn kho" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1140" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="db_commit" value="COMMIT transaction;&lt;br&gt;lưu đơn và tồn kho" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="1150" width="220" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="payment" value="Gửi yêu cầu thanh toán&lt;br&gt;kèm Idempotency-Key" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1315" y="1250" width="220" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="payment_decision" value="Thanh toán&lt;br&gt;thành công?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="1340" width="150" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="payment_success" value="Cập nhật Payment=PAID;&lt;br&gt;Order=PAID" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1450" width="230" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="payment_failure" value="Ghi Payment=FAILED;&lt;br&gt;đơn giữ PENDING hoặc&lt;br&gt;PAYMENT_FAILED" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1540" width="230" height="68" as="geometry"/>
+        </mxCell>
+        <mxCell id="confirm" value="Hiển thị mã đơn và&lt;br&gt;xác nhận thanh toán" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="375" y="1450" width="180" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="retry" value="Thông báo thanh toán lỗi;&lt;br&gt;cho phép thử lại" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="375" y="1540" width="180" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_success" value="" style="ellipse;html=1;shape=doubleEllipse;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="145" y="1455" width="28" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_fail" value="" style="ellipse;html=1;shape=doubleEllipse;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="145" y="1545" width="28" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="start" target="menu">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="menu" target="choose">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="choose" target="addcart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="addcart" target="checkout">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="checkout" target="login_decision">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6_yes" value="[Có]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="login_decision" target="review_cart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6_no" value="[Chưa]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="login_decision" target="login">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="login" target="auth_api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="auth_api" target="auth_ok">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9_yes" value="[Hợp lệ]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="auth_ok" target="review_cart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9_no" value="[Không hợp lệ]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="auth_ok" target="auth_error">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="auth_error" target="login">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="review_cart" target="submit_order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="submit_order" target="validate">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="validate" target="stock_decision">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14_yes" value="[Có]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="stock_decision" target="create_order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14_no" value="[Không]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="stock_decision" target="stock_error">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="stock_error" target="stock_msg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e16" value="Chỉnh số lượng / chọn sản phẩm khác" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="stock_msg" target="choose">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="create_order" target="db_commit">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="db_commit" target="payment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="payment" target="payment_decision">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e20_yes" value="[Có]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="payment_decision" target="payment_success">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e20_no" value="[Không]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="payment_decision" target="payment_failure">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="payment_success" target="confirm">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="confirm" target="end_success">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="payment_failure" target="retry">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e24" value="Thử thanh toán lại" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="retry" target="payment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="Lưu ý nghiệp vụ:&lt;br&gt;• Nếu chưa đăng nhập hoặc JWT không hợp lệ: yêu cầu xác thực trước khi tạo đơn.&lt;br&gt;• Hết hàng: không tạo đơn; giữ giỏ hàng để người dùng điều chỉnh.&lt;br&gt;• Thanh toán dùng Idempotency-Key để tránh xử lý trùng khi gửi lại yêu cầu." style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1625" width="1480" height="90" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
